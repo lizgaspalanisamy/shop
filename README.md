@@ -7,4 +7,9 @@
 3. `cd ..` and start metro server with `yarn start`
 4. Run `react-native run-ios` or open xcode, switch to debug mode, select simulator or live device and press play
 
+## Features
+
+1. Click camera icon, take a picture
+2. Click 
+
 

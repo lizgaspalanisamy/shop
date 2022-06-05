@@ -2,9 +2,9 @@ import {View, StyleSheet, Text, Button} from 'react-native';
 import type {Node} from 'react';
 import React from 'react';
 
-export default Product = (): Node => {
+export default Site = (): Node => {
 
-  const getProducts = () => { 
+  const getSites = () => { 
     let url = new URL('https://api2.shop.com/AffiliatePublisherNetwork/v2/products');
     url.search = new URLSearchParams({
       publisherId: process.env.PUBLISHER_ID,
@@ -27,7 +27,13 @@ export default Product = (): Node => {
   return (
     <View style={[styles.view]}>
       <Text style={[styles.text]}>
-        <Button style={[styles.button]} title="Product" onPress={() => getProducts()} />
+        <Button
+          style={[styles.button]}
+          title="Sites"
+          onPress={() => getSites()}
+        >
+          🏞️
+        </Button>
       </Text>
     </View>
   );

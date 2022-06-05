@@ -20,6 +20,8 @@ import {
 import Header from './src/components/Header/Header';
 import Product from './src/components/Products/Product';
 import ProductDetail from './src/components/ProductDetails/ProductDetail';
+import Site from './src/components/Sites/Site'
+import Camera from './src/components/Camera/Camera';
 
 const Colors = {
   primary: '#1292B4',
@@ -77,11 +79,17 @@ const App: () => Node = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}
         >
+        <Section title="Camera">
+            <Camera />
+          </Section>
           <Section title="Product">
             <Product />
           </Section>
           <Section title="Product Detail">
             <ProductDetail />
+          </Section>
+          <Section title="Sites">
+            <Site/>
           </Section>
         </View>
       </ScrollView>
