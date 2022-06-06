@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, TouchableOpacity, Alert, Text, Modal } from 'react-native';
 import type { Node } from 'react';
-// import CameraModal from '../Modal/CameraModal';
 import {RNCamera} from 'react-native-camera';
 import {useCamera} from 'react-native-camera-hooks'; 
 
