@@ -17,6 +17,7 @@
     "react": "17.0.2",
     "react-native": "0.68.2",
     "react-native-camera": "^4.2.1",
+    "react-native-camera-hooks": "^0.5.3",
     "react-native-fs": "^2.20.0",
     "react-native-svg": "^12.3.0"
   },

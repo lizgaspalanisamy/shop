@@ -1,4 +1,4 @@
-import {View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import {View, StyleSheet, Text, TouchableOpacity, Alert } from 'react-native';
 import type {Node} from 'react';
 import React from 'react';
 
@@ -7,16 +7,22 @@ export default Product = (): Node => {
   const getProducts = () => { 
     let url = new URL('https://api2.shop.com/AffiliatePublisherNetwork/v2/products');
     url.search = new URLSearchParams({
-      publisherId: process.env.PUBLISHER_ID,
+      publisherId: 'AP8232850',
       locale: 'en_US',
-      wite: 'shop',
+      site: 'shop',
       shipCountry: 'US',
       term: 'dog',
-    })
+    });
     return fetch(url)
       .then(response => response.json())
       .then(json => {
         console.log('The products are', json);
+        Alert.alert(`The products api returns: ${json.error.message}, using the following search params: 
+        publisherId: 'AP8232850',
+      locale: 'en_US',
+      site: 'shop',
+      shipCountry: 'US',
+      term: 'dog'`);
         return json;
       })
       .catch(error => {
@@ -27,7 +33,7 @@ export default Product = (): Node => {
   return (
     <View style={[styles.container]}>
       <Text style={[styles.title]}>Products</Text>
-      <Text style={[styles.text]}>Click to get products from Shop.com</Text>
+      <Text style={[styles.text]}>Click button to display products from Shop.com</Text>
       <TouchableOpacity
         style={[styles.button]}
         title="Product"
@@ -55,6 +61,7 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     padding: 5,
     backgroundColor: '#B19CD9',
+    marginBottom: 20,
   },
   text: {
     fontSize: 16,
@@ -62,6 +69,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     paddingLeft: 7,
     color: '#fff',
+    padding: 20,
   },
   container: {
     margin: 25,
