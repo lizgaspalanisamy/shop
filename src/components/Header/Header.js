@@ -19,15 +19,16 @@ export default Header = (): Node => {
 
 const styles = StyleSheet.create({
     view: {
-        backgroundColor: 'blue',
+        backgroundColor: '#0019ea',
         width: 400,
-        height: 100,
+        height: 150,
     },
     text: {
         fontSize: 40,
         fontWeight: '700',
         textAlign: 'center',
-        backgroundColor: 'blue',
+        margin: 20,
+        color: '#fff'
     },
 });
 
