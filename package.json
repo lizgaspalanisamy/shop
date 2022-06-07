@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "build:ios": "react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
@@ -11,6 +12,7 @@
   },
   "dependencies": {
     "@svgr/core": "^6.2.1",
+    "axios": "^0.27.2",
     "babel-plugin-inline-import": "^3.0.0",
     "metro-config": "^0.71.0",
     "path-dirname": "^1.0.2",

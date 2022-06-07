@@ -19,7 +19,7 @@ export default Header = (): Node => {
 
 const styles = StyleSheet.create({
     view: {
-        backgroundColor: '#0019ea',
+        backgroundColor: '#02055a',
         height: 150,
         width: '100%',
     },

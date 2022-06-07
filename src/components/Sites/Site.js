@@ -1,22 +1,23 @@
 import {View, StyleSheet, Text, TouchableOpacity, Alert } from 'react-native';
 import type {Node} from 'react';
-import React, { useRef } from 'react';
+import React from 'react';
+import axios from 'axios';
 
 export default Site = (): Node => {
-  let jsonOutput = useRef(null);
-  const getSites = () => { 
-    let url = new URL('https://api2.shop.com/AffiliatePublisherNetwork/v2/sites');
-    return fetch(url)
-      .then(response => response.json())
-      .then(json => {
-        console.log('The sites are', json);
-        Alert.alert(`The sites api returns: ${json.error.message}`)
-        return json;
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  };
+
+  const getSites = () => {
+    axios({
+      method: 'get',
+      url: 'https://api2.shop.com/AffiliatePublisherNetwork/v2/sites',
+      headers: {
+        api_Key: '76b99147dd61464cb77bd62fb3e5ee41',
+      },
+    }).then(response => {
+      for (let i = 0; i < 5; i++) {
+        Alert.alert(response.data.sites[i])
+      }
+    });
+  }
 
   return (
     <View style={[styles.container]}>
@@ -28,11 +29,8 @@ export default Site = (): Node => {
         style={[styles.button]}
         title="Sites"
         onPress={() => getSites()}
-      ><Text>Sites</Text></TouchableOpacity>
-      {/* {(jsonOutput != null) ?
-      <Text ref={jsonOutput} style={[styles.text]}>
-        {jsonOutput}
-      </Text> : null } */}
+      ><Text>Sites</Text>
+      </TouchableOpacity>    
     </View>
   );
 };
