@@ -9,7 +9,10 @@
 
 ## Features
 
-1. Click camera icon, take a picture
-2. Click 
+1. Click first button to take pictures
+2. Click second button to see products from shop.com displayed in a modal
+3. Click third button to see sites via multiple alert boxes
+
+## Enjoy!
 
 
